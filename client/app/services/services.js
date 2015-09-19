@@ -15,11 +15,12 @@ angular.module('shortly.services', [])
     });
   };
 
-  function addLink(link) {
+  function addLink(link, callback) {
     console.log("url is", link);
     $http.post('/api/links', {url: link})
     .then(function (res) {
-      console.log("Posted a link successfully!");
+      console.log("Successful link post!");
+      callback(res.data);
     }, function (res) {
       console.log("Not able to post a link.");
     });

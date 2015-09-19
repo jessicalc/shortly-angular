@@ -14,5 +14,17 @@
     <div class="message" ng-show="shortenForm.url.$error.url">
       Please enter a valid url.
     </div>
+
+    <img class="spinner" src="/assets/spiffygif_46x46.gif" ng-show="loading" />
+    <div class="link" ng-model="data" ng-show='data'>
+      <img src="/assets/redirect_icon.png"/>
+      <div class="info">
+        <div class='visits'><span class='count'>{{data.visits}}</span>Visits</div>
+        <div class='title'>{{data.title}}</div>
+        <div class='original'>{{data.url}}</div>
+        <a href='{{url.base_url}}/api/links/{{url.code}}'>{{data.base_url}}/{{data.code}}</a>
+      </div>
+    </div>
+
   </div>
 </div>

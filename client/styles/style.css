@@ -139,7 +139,7 @@ input[type=url]:focus {
   height: 46px;
   margin-bottom: 5px;
   padding: 10px;
-  display: none;
+  /*display: none;*/
 }
 
 .creator .message {
