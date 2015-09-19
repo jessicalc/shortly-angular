@@ -5,13 +5,16 @@
       <li><a href="/#/shorten">Shorten</a></li>
     </ul>
   </div>
-  <div class="link" ng-repeat="url in data.links track by $index">
+
+
+
+  <div class="link" ng-repeat="url in data.links | orderBy :'-visits'">
     <img src="/assets/redirect_icon.png"/>
     <div class="info">
       <div class='visits'><span class='count'>{{url.visits}}</span>Visits</div>
       <div class='title'>{{url.title}}</div>
       <div class='original'>{{url.url}}</div>
-      <a href='{{url.base_url}}/{{url.code}}'>{{url.base_url}}/{{url.code}}</a>
+      <a href='{{url.base_url}}/api/links/{{url.code}}'>{{url.base_url}}/{{url.code}}</a>
     </div>
   </div>
 </div>
