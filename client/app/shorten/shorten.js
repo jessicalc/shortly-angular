@@ -7,5 +7,6 @@ angular.module('shortly.shorten', [])
   $scope.addLink = function () {
     Links.addLink($scope.link.url);
     $scope.link.url = '';
+    $scope.shortenForm.$setPristine();
   };
 });

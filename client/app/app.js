@@ -28,7 +28,7 @@ angular.module('shortly', [
       templateUrl: 'app/shorten/shorten.html',
       controller: 'ShortenController'
     })
-    .when('/*', {
+    .otherwise({
       templateUrl: 'app/links/links.html',
       controller: 'LinksController'
     });

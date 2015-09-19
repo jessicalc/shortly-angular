@@ -3,16 +3,16 @@
   <div class="navigation">
     <ul>
       <li><a href="/#/links">Links</a></li>
-      <li><a href="/#/shorten">Shorten</a></li>
+      <li><a class="selected" href="/#/shorten">Shorten</a></li>
     </ul>
   </div>
-  <form name="shortenForm" ng-submit='addLink()'>
-    <input type='text'ng-model='link.url'>
-    <button>Shorten</button>
-  </form>
-
+  <div class="creator">
+    <form name="shortenForm" ng-submit='shortenForm.$valid && addLink()' novalidate>
+      <input type='url' name='url' ng-model='link.url' required>
+      <button type="submit" ng-disabled="!(!!link.url)">Shorten</button>
+    </form>
+    <div class="message" ng-show="shortenForm.url.$error.url">
+      Please enter a valid url.
+    </div>
+  </div>
 </div>
-
-
-
-

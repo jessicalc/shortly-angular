@@ -11,6 +11,7 @@ angular.module('shortly.auth', [])
       .then(function (token) {
         $window.localStorage.setItem('com.shortly', token);
         $location.path('/links');
+        $scope.signinForm.$setPristine();
       })
       .catch(function (error) {
         console.error(error);
@@ -22,6 +23,7 @@ angular.module('shortly.auth', [])
       .then(function (token) {
         $window.localStorage.setItem('com.shortly', token);
         $location.path('/links');
+        $scope.signupForm.$setPristine();
       })
       .catch(function (error) {
         console.error(error);
